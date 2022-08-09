@@ -280,37 +280,132 @@
 // var countChange = function(money, coins) {
 //   // your implementation here
 // }
-const money=0
-const coins=[2, 3]
-const coinsSorted=coins.sort((a,b)=>a-b)
-const maxCoinsAmount=Math.trunc(money/coinsSorted[0])
+// const money=7
+// const coins=[2, 3]
+// const coinsSorted=coins.sort((a,b)=>a-b)
+// const maxCoinsAmount=Math.trunc(money/coinsSorted[0])
 
-const makeVariationsOfTwo=function(num1,num2){
-    let variations=[]
-    if (!num1.length){
-        variations=[...num2]
-        return variations
-    }  
+// const makeVariationsOfTwo=function(num1,num2){
+//     let variations=[]
+//     if (!num1.length){
+//         variations=[...num2]
+//         return variations
+//     }  
 
-    num1.forEach((el1)=>{
-        const sumOfCoins=el1.reduce((sum, el)=>sum+el,0)
+//     num1.forEach((el1)=>{
+//         const sumOfCoins=el1.reduce((sum, el)=>sum+el,0)
 
-        num2.forEach((el2)=>{
-            if(sumOfCoins+el2[0]<=maxCoinsAmount){variations.push([...el1, ...el2])}
-         })
-    })
-    return variations
+//         num2.forEach((el2)=>{
+//             if(sumOfCoins+el2[0]<=maxCoinsAmount){variations.push([...el1, ...el2])}
+//          })
+//     })
+//     return variations
+// }
+// const coinsNumber=[]
+// for (i=0;i<=maxCoinsAmount;i++){
+//     coinsNumber.push([i])
+// }  
+
+// let arrayVariations=[]
+// for (i=0;i<=coins.length-1;i++){
+//     arrayVariations=makeVariationsOfTwo(arrayVariations,coinsNumber)
+// }
+
+// const resArr=arrayVariations.filter(arrEl=>money===arrEl.reduce((sum, el, indx)=>sum+el*coinsSorted[indx],0))
+// console.log(resArr, resArr.length)
+
+
+//----------------------------------------------------------------------
+// function solution(list){
+//     // TODO: complete solution 
+//    }
+// const list=[-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]
+// let row=[]
+// let newlist=[]
+// for(i=0; i<list.length-2;i++){
+//     if ((list[i]-list[i+1]===-1)&&(list[i+1]-list[i+2]===-1))
+//             {row.push(list[i]);row.push(list[i+1])}
+//     else    {newlist.push(list[i])}
+//     console.log(row)
+// }
+// console.log(newlist)
+
+//-------------------------------max in aaray
+// const list=[-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]
+
+// function arrayMax(arr){
+//     return Math.max(...arr)
+// }
+// console.log(arrayMax(list))
+
+// //------------------ initials
+// str='Ihnatchuk Dmytro Oleksandrovych'
+// function initials(name){
+//     return name.split(' ').map((el,indx)=>indx?el.slice(0,1)+'.':el).join(' ')
+// }
+// console.log(initials(str))
+
+// //-----------Написати функцію пошуку найкоротшого слова
+
+// const arrOfWords=['fghfghfgh','fghf','fghfgh','gh']
+// const shortestWord=(arr)=>arr.sort((a,b)=>a.length-b.length)[0]
+// console.log(shortestWord(arrOfWords))
+
+// //-------------------Написати функцію перевірки паліндрому
+// str='admnd'
+// const isPalindrom=(word)=>str.split('').filter((a,indx,arr)=>a!==arr.at(-1-indx)).length<=1
+// console.log(isPalindrom(str))
+
+//var i=1
+// var i=1
+// for (var j=0; j<5; j++){
+//     var k=1
+//     var t
+//     t=(function(){
+//         console.log(i, j, k)
+//         return i+k+j})()
+//     //console.log(i, j)
+// }
+// console.log(i, j, k,t)
+
+
+//------------------ var and assync function
+for ( let j=0; j<5; j++){
+    setTimeout(function(){
+      console.log(j+2)  
+    },0)
 }
-const coinsNumber=[]
-for (i=0;i<=maxCoinsAmount;i++){
-    coinsNumber.push([i])
-}  
 
-let arrayVariations=[]
-for (i=0;i<=coins.length-1;i++){
-    arrayVariations=makeVariationsOfTwo(arrayVariations,coinsNumber)
-}
 
-const resArr=arrayVariations.filter(arrEl=>money===arrEl.reduce((sum, el, indx)=>sum+el*coinsSorted[indx],0))
-console.log(resArr, resArr.length)
+// for (let j=0; j<5; j++){
+//       console.log(i, j)  
+// }
+// console.log(i, j)
+// var i=2
 
+//---------------------------- var
+
+
+// var x = 0; // Declares x within file scope, then assigns it a value of 0.
+
+// console.log(typeof z); // "undefined", since z doesn't exist yet
+
+// function a() {
+//   var y = 2; // Declares y within scope of function a, then assigns it a value of 2.
+
+//   console.log(x, y); // 0 2
+
+//   function b() {
+//     x = 3; // Assigns 3 to existing file scoped x.
+//     y = 4; // Assigns 4 to existing outer y.
+//     z = 5; // Creates a new global variable z, and assigns it a value of 5.
+//            // (Throws a ReferenceError in strict mode.)
+//   }
+
+//   b(); // Creates z as a global variable.
+//   console.log(x, y, z); // 3 4 5
+// }
+
+// a(); // Also calls b.
+// console.log(x, z);     // 3 5
+// console.log(typeof y); // "undefined", as y is local to function a
